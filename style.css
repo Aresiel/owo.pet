@@ -46,8 +46,10 @@ body {
     transition: all 0.1s ease-in-out;
 }
 
-.button:hover {
-    background-color: #292929;
+@media (hover: hover) {
+    .button:hover {
+        background-color: #292929;
+    }
 }
 
 .button:active {

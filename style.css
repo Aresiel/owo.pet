@@ -2,8 +2,6 @@ html, body {
     background-color: #121212;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-
 :root {
 	--bg: #121212;
 	--fg: #eeeeee;

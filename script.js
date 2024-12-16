@@ -16,12 +16,12 @@ document.getElementById("paw_button").addEventListener("click", e => {
     let y_offset = Math.sin(angle)
     
     //transition: transform 0.1s ease-in;
-    projectile.style.setProperty("transition", `transform ${inv_speed}s ease-in, opacity ${lifespan}s ease-in`)
-    projectile.style.setProperty("transform", `translate(${x_offset*2}rem, ${y_offset*2}rem)`)
+    projectile.style.transition = `transform ${inv_speed}s ease-in, opacity ${lifespan}s ease-in`
+    projectile.style.transform = `translate(${x_offset*2}rem, ${y_offset*2}rem)`
 
     setTimeout(() => {
-        projectile.style.setProperty("transform", `translate(${x_offset*10000}rem, ${y_offset*10000}rem)`)
-        projectile.style.setProperty("opacity", "0")
+        projectile.style.transform = `translate(${x_offset*10000}rem, ${y_offset*10000}rem)`
+        projectile.style.opacity = "0"
     }, 10)
 
     setTimeout(() => {

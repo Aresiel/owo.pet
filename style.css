@@ -1,0 +1,62 @@
+html, body {
+    background-color: #121212;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+:root {
+	--bg: #121212;
+	--fg: #eeeeee;
+
+    --button-size: 10rem;
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--bg);
+	flex-direction: column;
+	font-family: "Roboto Mono", "Consolas", monospace;
+    overflow: hidden;
+}
+
+.paw_icon {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    fill: var(--fg);
+}
+
+.button {
+    z-index: 1000;
+    width: var(--button-size);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0000;
+    border-radius: 100%;
+    cursor: pointer;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.button:hover {
+    background-color: #292929;
+}
+
+.button:active {
+    background-color: #3e3e3e;
+    width: calc(var(--button-size)*0.9);
+}
+
+.projectile {
+    z-index: 100;
+    position: absolute;
+    font-size: 2rem;
+}

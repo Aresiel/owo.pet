@@ -1,3 +1,5 @@
+'use strict';
+
 const animals = ['🐱', '🐶', '🐯', '🐰', '🐹', '🦁', '🦊', '🐻‍❄️']
 
 document.getElementById("paw_button").addEventListener("click", e => {

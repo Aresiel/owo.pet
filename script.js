@@ -1,6 +1,4 @@
-animals = ['🐱', '🐶', '🐯', '🐰', '🐹', '🦁', '🦊', '🐻‍❄️']
-
-body_el = document.getElementsByTagName("body")[0]
+let animals = ['🐱', '🐶', '🐯', '🐰', '🐹', '🦁', '🦊', '🐻‍❄️']
 
 document.getElementById("paw_button").addEventListener("click", e => {
 
@@ -8,14 +6,14 @@ document.getElementById("paw_button").addEventListener("click", e => {
     projectile.innerHTML = animals[Math.floor(Math.random()*animals.length)]
     projectile.classList.add("projectile")
 
-    body_el.append(projectile)
+    document.body.append(projectile)
 
-    angle = Math.random()*2*Math.PI
-    lifespan = 1+Math.random()*2
-    inv_speed = 30 + Math.random()*0.4
+    let angle = Math.random()*2*Math.PI
+    let lifespan = 1+Math.random()*2
+    let inv_speed = 30 + Math.random()*0.4
 
-    x_offset = Math.cos(angle)
-    y_offset = Math.sin(angle)
+    let x_offset = Math.cos(angle)
+    let y_offset = Math.sin(angle)
     
     //transition: transform 0.1s ease-in;
     projectile.style.setProperty("transition", `transform ${inv_speed}s ease-in, opacity ${lifespan}s ease-in`)

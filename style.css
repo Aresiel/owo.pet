@@ -24,6 +24,11 @@ body {
     overflow: hidden;
 }
 
+#canvas {
+    width: 100vw;
+    height: 100vh;
+}
+
 .paw_icon {
     width: 40%;
     aspect-ratio: 1 / 1;
@@ -42,6 +47,11 @@ body {
     cursor: pointer;
 
     transition: all 0.1s ease-in-out;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @media (hover: hover) {
@@ -53,10 +63,4 @@ body {
 .button:active {
     background-color: #3e3e3e;
     width: calc(var(--button-size)*0.9);
-}
-
-.projectile {
-    z-index: 100;
-    position: absolute;
-    font-size: 2rem;
 }

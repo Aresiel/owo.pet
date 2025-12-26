@@ -1,6 +1,6 @@
 'use strict';
 
-let count = BigInt(localStorage.getItem('count')) ?? 1n;
+let count = BigInt(localStorage.getItem('count') ?? 1);
 let volume = +(localStorage.getItem('volume_slider') ?? 7.5);
 
 const animals = ['🐱', '🐶', '🐯', '🐰', '🐹', '🦁', '🦊', '🐻‍❄️']

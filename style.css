@@ -106,6 +106,7 @@ body section {
 .attribution_text {
     color: #555555;
     transition: all 0.1s ease-in-out;
+    text-align: center;
 }
 
 .attribution_text a:hover {

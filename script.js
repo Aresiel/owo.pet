@@ -27,7 +27,6 @@ function setVolume(new_volume) {
     volume = new_volume;
     localStorage.setItem('volume_slider', volume);
     volume_slider.value = volume;
-    console.log(volume);
 }
 
 setCount(count);
@@ -66,7 +65,7 @@ paw_button.addEventListener("click", e => {
     setCount(count + 1n);
 
     // Play sound
-    let track = audioContext.createMediaElementSource(sound_effect);
+    let track = audioContext.createMediaElementSource(sound_effect.cloneNode());
     track.connect(audioContext.destination);
     sound_effect.currentTime = 0;
     let volume_slider_value = volume_slider.value / 100;

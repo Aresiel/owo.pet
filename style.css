@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lekton:ital,wght@0,400;0,700;1,400&display=swap');
+
 html, body {
     background-color: #121212;
 }
@@ -15,19 +17,27 @@ html, body {
 }
 
 body {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 	background-color: var(--bg);
 	flex-direction: column;
-	font-family: "Roboto Mono", "Consolas", monospace;
+	font-family: "Lekton", "Roboto Mono", "Consolas", monospace;
     overflow: hidden;
+
+    color: var(--fg);
+}
+
+body section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .paw_icon {
     width: 40%;
     aspect-ratio: 1 / 1;
     fill: var(--fg);
+    pointer-events: none;
 }
 
 .button {
@@ -59,4 +69,74 @@ body {
     z-index: 100;
     position: absolute;
     font-size: 2rem;
+    font-family: "Roboto Mono", "Consolas", monospace;
+}
+
+.counter_container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    transform: translateX(1.5em);
+}
+
+.counter_container:hover .reset_button {
+    stroke: #555555;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.counter_container:hover .reset_button:active {
+    stroke: #777777;
+}
+
+.reset_button {
+    position: relative;
+    stroke: var(--bg);
+    fill: none;
+    width: 2em;
+    transform: translateY(0.5em);
+    transition: all 0.1s ease-in-out;
+}
+
+.footer_section {
+    flex-direction: column;
+    gap: 2em;
+}
+
+.attribution_text {
+    color: #555555;
+    transition: all 0.1s ease-in-out;
+}
+
+.attribution_text a:hover {
+    color: #777777;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: calc(var(--button-size) * 2);
+    height: 0.5rem;
+    border-radius: 1rem;
+    background: #292929;
+    transition: all 0.1s ease-in-out;
+}
+
+input[type="range"]:hover {
+    background: #3e3e3e;
+}
+
+input[type="range"]::-moz-range-thumb, input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: #3e3e3e;
+    transition: all 0.1s ease-in-out;
+}
+
+input[type="range"]:hover::-moz-range-thumb, input[type="range"]:hover::-webkit-slider-thumb {
+    background: #555555;
+}
+
+input[type="range"]:active::-moz-range-thumb, input[type="range"]:active::-webkit-slider-thumb {
+    background: #777777;
 }

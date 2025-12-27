@@ -68,7 +68,7 @@ paw_button.addEventListener("click", e => {
     let track = audioContext.createMediaElementSource(sound_effect.cloneNode());
     track.connect(audioContext.destination);
     sound_effect.currentTime = 0;
-    let volume_slider_value = volume_slider.value / 100;
+    let volume_slider_value = volume / 100;
     sound_effect.volume = volume_slider_value + Math.random() * volume_slider_value/3;
     sound_effect.play();
 })

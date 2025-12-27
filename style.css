@@ -120,8 +120,25 @@ body section {
     color: #777777;
 }
 
+/********** Range Input Styles **********/
+/*Range Reset*/
 input[type="range"] {
     -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+    transition: all 0.1s ease-in-out;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
     width: calc(var(--button-size) * 2);
     height: 0.5rem;
     border-radius: 1rem;
@@ -129,26 +146,71 @@ input[type="range"] {
     transition: all 0.1s ease-in-out;
 }
 
-input[type="range"]:hover {
+input[type="range"]:hover::-webkit-slider-runnable-track {
     background: #3e3e3e;
 }
 
-input[type="range"]::-moz-range-thumb, input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
     appearance: none;
-    border: none;
+    margin-top: -4px; /* Centers thumb on the track */
+
+    /*custom styles*/
     background: #3e3e3e;
+    transition: all 0.1s ease-in-out;
+    height: 1em;
+    width: 1em;
+    border-radius: 100%;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+    background: #555555;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+    background: #777777;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    background: #777777;
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    width: calc(var(--button-size) * 2);
+    height: 0.5rem;
+    border-radius: 1rem;
+    background: #292929;
     transition: all 0.1s ease-in-out;
 }
 
-input[type="range"]:hover::-moz-range-thumb, input[type="range"]:hover::-webkit-slider-thumb {
+input[type="range"]:hover::-moz-range-track {
+    background: #3e3e3e;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0; /*Removes default border-radius that FF applies*/
+
+    /*custom styles*/
+    background: #3e3e3e;
+    transition: all 0.1s ease-in-out;
+    height: 1em;
+    width: 1em;
+    border-radius: 100%;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
     background: #555555;
 }
 
-input[type="range"]:hover::-moz-range-thumb:hover, input[type="range"]:hover::-webkit-slider-thumb:hover {
-    background: #555555;
+input[type="range"]:active::-moz-range-thumb {
+    background: #777777;
 }
 
-input[type="range"]:active::-moz-range-thumb, input[type="range"]:active::-webkit-slider-thumb {
+input[type="range"]:focus::-moz-range-thumb {
     background: #777777;
 }
